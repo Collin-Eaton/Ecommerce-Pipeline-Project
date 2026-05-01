@@ -1,15 +1,38 @@
-Welcome to your new dbt project!
-
-### Using the starter project
-
-Try running the following commands:
-- dbt run
-- dbt test
-
-
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+Data is generated through a simulated API built with FastAPI. A Python ETL pipeline extracts that data and loads it into Snowflake raw tables. From there, dbt transforms the data into staging models for cleaning and validation, and then into marts models using a star schema for analytics consumption
+ 
+ +----------------------+
+                    |   API Simulator      |
+                    | (FastAPI + Faker)   |
+                    +----------+-----------+
+                               |
+                               v
+                    +----------------------+
+                    |   Python ETL Layer   |
+                    |  (Extract/Transform) |
+                    +----------+-----------+
+                               |
+                               v
+                    +----------------------+
+                    |     Snowflake        |
+                    |   Raw Tables (RAW)   |
+                    +----------+-----------+
+                               |
+                               v
+                    +----------------------+
+                    |        dbt           |
+                    |  Staging Models      |
+                    |  (stg_orders, etc)   |
+                    +----------+-----------+
+                               |
+                               v
+                    +----------------------+
+                    |      dbt Marts       |
+                    | Fact & Dimension     |
+                    | (fct_orders, dim_*)  |
+                    +----------+-----------+
+                               |
+                               v
+                    +----------------------+
+                    |   Analytics Layer    |
+                    | (BI / Reporting)     |
+                    +----------------------+
