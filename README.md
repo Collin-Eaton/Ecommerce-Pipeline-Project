@@ -1,2 +1,2 @@
 # Ecommerce-Pipeline-Project
-Create a pipeline that simulates an Ecommerce site using python to pull from a simulated API with simulated data. Then Python incremental loads into Snowflake as the warehouse. Then using DBT models, transform Raw data into analytics ready data.  
+Built an end-to-end data platform simulating an e-commerce business. The system ingests data from a REST API, loads into Snowflake, and transforms it using dbt into analytics-ready models.  
