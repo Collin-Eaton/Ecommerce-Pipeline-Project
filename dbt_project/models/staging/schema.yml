@@ -1,0 +1,13 @@
+models:
+  - name: stg_orders
+    description: Cleaned orders data from API
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+
+      - name: customer_id
+        tests:
+          - not_null
+

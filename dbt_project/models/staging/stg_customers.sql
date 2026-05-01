@@ -1,0 +1,5 @@
+SELECT
+    CAST(customer_id AS INTEGER) AS customer_id,
+    name,
+    email
+FROM ECOMMERCE_DB.ECOMMERCE_SCHEMA.RAW_CUSTOMERS

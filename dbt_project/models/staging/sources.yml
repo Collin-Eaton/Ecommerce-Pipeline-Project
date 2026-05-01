@@ -1,0 +1,17 @@
+sources:
+  - name: raw
+    description: "Raw data ingested from API via Python ETL"
+    database: ecommerce_db
+    schema: ECOMMERCE_SCHEMA
+    tables:
+      - name: raw_customers
+        description: "Raw customer data from API"
+
+      - name: raw_orders
+        description: "Raw order data from API"
+
+      - name: raw_products
+        description: "Raw product data from API"
+
+      - name: raw_returns
+        description: "Raw returns data from API"
